@@ -25,7 +25,10 @@ class WeatherDetailController: UIViewController, UICollectionViewDelegate, UICol
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+    }
     
+    override func viewDidAppear(_ animated: Bool) {
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
@@ -36,9 +39,6 @@ class WeatherDetailController: UIViewController, UICollectionViewDelegate, UICol
             print("Error Location Service")
         }
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         showSpinner()
     }
 
